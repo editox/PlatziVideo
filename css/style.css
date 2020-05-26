@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+}
+
+.main {
+    margin: auto;
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: minmax(250px, 300px) 400px 1fr;
+    grid-template-rows: auto 100px auto;
+    grid-template-areas: "left video video"
+                         "left description description"
+                         "left commend  recomendation";
+    box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.472);
+}
+.left {
+    grid-area: left;
+    padding: 20px;
+    background-color: rgb(21,27,49);
+    color: white;
+}
+.left .playlist-title, .playlists-friends {
+    font-size: 15px;
+}
+.left .playlist-items .item{
+    display: flex;
+}
+.left .playlist-items .item-number{
+    padding-right: 15px;
+}
+.left .friends-contain .friend {
+    display: flex;
+}
+.left .friends-contain .friend-image {
+    width: 50px;
+    margin-right: 10px;
+}
+.left .friends-contain .friend-image img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.video {
+    grid-area: video;
+}
+.video img {
+    width:100%;
+}
+
+.description {
+    grid-area: description;
+    padding-left: 10px;;
+    border-bottom: 1px solid grey;
+}
+.description .video-title p, .video-title h2{
+    margin: 0;
+}
+.description .links {
+    display: flex;
+    align-items: center;
+}
+.description .links .mylist {
+    background: linear-gradient( 90deg, red, rgb(240, 100, 123) 70%);
+    padding: 7px;
+    border:none;
+    border-radius: 5px;
+    color:whitesmoke;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.description .links .share, .save {
+    padding-left: 20px;
+    text-align: center;
+}
+.description .links .share img, .save img {
+    width: 20px;
+}
+.description .links .share p, .save p {
+    margin:0;
+}
+.description .links .genre-contain{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: 
+}
+.description .links .genre {
+    margin-left: 15px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 10px;
+    padding:5px;
+    width: 60px;
+}
+.description .links .genre:nth-of-type(1) {
+    background-color: purple;
+}
+.description .links .genre:nth-of-type(2) {
+    background-color: green;
+}
+.description .links .genre:nth-of-type(3) {
+    background-color: red;
+}
+.description .links .genre:nth-of-type(4) {
+    background-color: palevioletred;
+}
+
+.commend {
+    grid-area: commend;
+    padding: 15px;
+}
+.commend .in-commend {
+    display: flex;
+    background-color: rgb(228, 221, 221);
+    padding: 7px;
+    border-radius: 20px;
+}
+.in-commend .user-image {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/user.jpg');
+    background-size: contain;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+.commend .in-commend input{
+    background-color: transparent;
+    border: none;
+    outline-style: none;
+}
+.history-commend {
+    padding-left: 15px;
+}
+.history-commend .user {
+    display:flex;
+    margin: 10px 0;
+}
+.history-commend .user p{
+    margin: 0;
+    padding-left: 10px;
+}
+.history-commend .user-image {
+    width: 30px;
+}
+.history-commend .user-image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.recomendation {
+    grid-area: recomendation;
+    justify-self: center;
+}
+.recomendation div{
+    width: 250px;
+    cursor: pointer;
+
+}
+.recomendation div img{
+    width: 100%;
+    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.472);
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        display: grid;
+        grid-template-columns:400px 1fr;
+        grid-template-rows: auto 100px auto auto;
+        grid-template-areas: "video video"
+                             "description description"
+                             "commend recomendation"
+                             "left left";
+    }
+    .left {
+        display: grid;
+        grid-template: 70px 70px 500px / repeat(2, 1fr);
+    }
+    .left .logo {
+        grid-column: span 2;
+    }
+    .left .playlists-friends {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+}
+
